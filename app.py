@@ -2,7 +2,6 @@ import streamlit as st
 import time 
 from trubrics.integrations.streamlit import FeedbackCollector
 from trubrics import Trubrics 
-#from streamlit_feedback import streamlit_feedback
 
 # app title 
 st.set_page_config(page_title="Wing Warranty Chatbot")
