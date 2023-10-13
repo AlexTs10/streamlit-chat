@@ -42,8 +42,8 @@ if prompt := st.chat_input():
     st.session_state.messages.append(message)
 
     collector = FeedbackCollector(
-        email= "alexandros_1010@outlook.com" #st.secrets.TRUBRICS_EMAIL,
-        password= "aliexandros1" #st.secrets.TRUBRICS_PASSWORD,
+        email= "alexandros_1010@outlook.com", #st.secrets.TRUBRICS_EMAIL,
+        password= "aliexandros1", #st.secrets.TRUBRICS_PASSWORD,
         project="default"
     )
 
