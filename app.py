@@ -37,7 +37,24 @@ if prompt := st.chat_input():
     with st.chat_message("assistant", avatar='wing.png'):
         with st.spinner("Thinking..."):
             response = generate_response(prompt)
-            st.write(response)
+            #st.write(response)
+            chunks = response.split()
+            num_chunks = len(chunks) 
+
+            msg_placeholder = st.empty()
+            full_response = ""
+            for i, chunk in enumerate(chunks):
+                full_response += chunk + " "
+                time.sleep(0.05)
+                # Check if it's the last chunk
+                if i == num_chunks - 1:
+                    #for last chunk, we don't add the blinking cursor
+                    msg_placeholder.markdown(full_response)
+                else:
+                    # Add blinking cursor to simulate typing
+                    msg_placeholder.markdown(full_response + "▌")
+            #msg_placeholder.markdown(full_response)  
+
     message = {"role": "assistant", "content": response}
     st.session_state.messages.append(message)
 
